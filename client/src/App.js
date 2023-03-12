@@ -59,7 +59,7 @@ function App() {
       return data.json();
     }).then((data) => {
       console.log(data);
-      alert("Event created, check your Google Calendar!");
+      alert("สร้างกิจกรรมแล้ว! ตรวจสอบได้ใน Google Calendar");
     });
   }
 
@@ -72,23 +72,25 @@ function App() {
       <div style={{width: "400px", margin: "30px auto"}}>
         {session ?
           <>
-            <h2>Hey there {session.user.email}</h2>
-            <p>Start of your event</p>
-            <DateTimePicker onChange={setStart} value={start} />
-            <p>End of your event</p>
-            <DateTimePicker onChange={setEnd} value={end} />
-            <p>Event name</p>
+            <h2>สวัสดีผู้ใช้{session.user.email}</h2>
+            <p>ชื่อกิจกรรม</p>
             <input type="text" onChange={(e) => setEventName(e.target.value)} />
-            <p>Event description</p>
+            <p>คำอธิบายกิจกรรม</p>
             <input type="text" onChange={(e) => setEventDescription(e.target.value)} />
+            <p>เริ่มกิจกรรม</p>
+            <DateTimePicker onChange={setStart} value={start} />
+            <p>สิ้นสุดกิจกรรม</p>
+            <DateTimePicker onChange={setEnd} value={end} />
+            
+            
             <hr />
-            <button onClick={() => createCalendarEvent()}>Create Calendar Event</button>
+            <button onClick={() => createCalendarEvent()}>สร้างกิจกรรม</button>
             <p></p>
-            <button onClick={() => signOut()}>Sign Out</button>
+            <button onClick={() => signOut()}>ลงชื่อออก</button>
           </>
           :
           <>
-            <button onClick={() => googleSignIn()}>Sign In With Google</button>
+            <button onClick={() => googleSignIn()}>ลงชื่อเข้าใช้ด้วย Google</button>
           </>
         }
       </div>
