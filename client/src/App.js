@@ -72,7 +72,7 @@ function App() {
       <div style={{width: "400px", margin: "30px auto"}}>
         {session ?
           <>
-            <h2>สวัสดีผู้ใช้{session.user.email}</h2>
+            <h2>สวัสดีผู้ใช้ {session.user.email}</h2>
             <p>ชื่อกิจกรรม</p>
             <input type="text" onChange={(e) => setEventName(e.target.value)} />
             <p>คำอธิบายกิจกรรม</p>
@@ -90,6 +90,7 @@ function App() {
           </>
           :
           <>
+            <h1>ระบบแจ้งเตือนกิจกรรม</h1>
             <button onClick={() => googleSignIn()}>ลงชื่อเข้าใช้ด้วย Google</button>
           </>
         }
