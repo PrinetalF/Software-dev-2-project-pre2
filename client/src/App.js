@@ -74,6 +74,7 @@ function App() {
           <>
             <h2>สวัสดีผู้ใช้ {session.user.email}</h2>
             <p>ชื่อกิจกรรม</p>
+            
             <input type="text" onChange={(e) => setEventName(e.target.value)} />
             <p>คำอธิบายกิจกรรม</p>
             <input type="text" onChange={(e) => setEventDescription(e.target.value)} />
